@@ -1,0 +1,24 @@
+.form-control {
+    border-radius: 3px;
+    width: 600px;
+    margin-left: 20px;
+}
+
+.search-icon {
+    position: absolute;
+    z-index: 10;
+    right: 33%;
+    top: 20px;
+    color: darkorange;
+}
+.navbar.navbar-dark.shadow-sm {
+  background-color: darkorange;
+}
+i.fas.fa-cart-plus {
+  color: darkorange;
+}
+.btn-primary {
+  color: #fff;
+  border-color: #fff;
+  background-color: #fff;
+}

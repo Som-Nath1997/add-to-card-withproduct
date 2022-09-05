@@ -1,0 +1,29 @@
+<main class="container">
+
+  <!-- Left Column  Image -->
+  <div class="left-column">
+    <img data-image="black"src="{{productDetails.image}}" alt="">
+  </div>
+
+  <div class="right-column">
+
+    <!-- Product Description -->
+    <div class="product-description">
+      <h1>{{productDetails.category}}</h1>
+      <h3>{{productDetails.title}}</h3>
+      <p>{{productDetails.description}}</p>
+
+      <!-- Product Pricing -->
+    <div class="product-price">
+      <span>{{productDetails.price}}$</span>
+      <button class="btn btn-primary m-1" (click)=addtocart(productDetails)>Add to cart</button>
+    </div>
+  </div>
+    </div>
+
+</main>
+<ng-container>
+      <div class="center text-center m-2">
+          <button routerLink="/products" class="btn btn-primary more shop">Shop More</button>
+      </div>
+</ng-container>
