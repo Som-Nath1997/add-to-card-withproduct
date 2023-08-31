@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
+import Swal from 'sweetalert2';
 console.log("card compnet")
 
 @Component({
@@ -21,10 +22,56 @@ export class CartComponent implements OnInit {
     })
   }
   removeItem(item: any){
-    this.cartService.removeCartItem(item);
+    Swal.fire({
+      title: 'Are you sure want to remove?',
+      text: 'You will not be able to recover this file!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, Remove it!',
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.value) {
+        this.cartService.removeCartItem(item);
+        Swal.fire(
+          'Deleted!',
+          'Your item has been removed.',
+          'success'
+        )
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'Your item is not removed from cart',
+          'error'
+        )
+      }
+    })
   }
   emptycart(){
-    this.cartService.removeAllCart();
+
+    Swal.fire({
+      title: 'Are you sure want to remove?',
+      text: 'You will not be able to recover this file!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, Remove it!',
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.value) {
+        this.cartService.removeAllCart();
+        Swal.fire(
+          'Deleted!',
+          'Your item has been removed.',
+          'success'
+        )
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'Your item is not removed from cart',
+          'error'
+        )
+      }
+    })
+    
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewContainerRef,ComponentFactoryResolver } from '@angular/core';
 import { ApiService } from 'src/app/service/api.service';
 import { CartService } from 'src/app/service/cart.service';
-
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -33,7 +33,9 @@ export class ProductsComponent implements OnInit {
     })
   }
   addtocart(item: any){
+    debugger
     this.cartService.addtoCart(item);
+    swal.fire('Thank you', 'Item Added Successfully In The Cart!', 'success')
   }
   filter(category:string){
     this.filterCategory = this.productList

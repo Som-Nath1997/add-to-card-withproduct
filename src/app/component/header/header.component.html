@@ -4,17 +4,14 @@
             <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
 
             </i>
-            <strong style="font-size: 30px;">myBageecha</strong>
+            <strong style="font-size: 30px;">MyProducts</strong>
             <div class="form-group">
-                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Search Filter by Price">
             </div>
-            <span class="fas fa-search search-icon"></span>
-
-
         </div>
         <button routerLink="cart" class="btn btn-primary">
             <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
-            <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+            <div style="font-size: 10px; background-color: black;" class="badge">{{totalItem}}</div>
         </button>
     </div>
 </header>
